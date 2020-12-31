@@ -38,6 +38,9 @@
 #else
 #include <windows.h>
 #include "getopt/getopt.h"
+#if defined(_MSC_VER) && (_MSC_VER < 1800)
+#define round(x) (x > 0.0 ? floor(x + 0.5): ceil(x - 0.5))
+#endif
 #endif
 
 #include "rtl-sdr.h"
